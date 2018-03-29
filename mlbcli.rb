@@ -8,11 +8,11 @@ class Mlbcli < Formula
   sha256 'b5deb09193497d4e87406bcfef1f8ea63ff8eecc38aa54fa3d2f8ef4810abc6e'
 
   def install
-    bin.install Dir['*']
+    bin.install_symlink %{#{prefix}/mlbcli}
   end
 
   test do
-    `go test`
+    `mlbcli -h`
   end
 
 end
